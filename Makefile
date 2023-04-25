@@ -3,6 +3,7 @@
 
 CONTAINER_PHP=php
 CONTAINER_DB=database
+CONTAINER_NODE=node
 
 VOLUME_DATABASE=db-data
 VOLUME_DATABASE_TESTING=db-testing-data
@@ -64,3 +65,7 @@ ssh-php:
 
 ssh-db:
 	docker exec -it ${CONTAINER_DB} sh
+
+ssh-node:
+	docker exec -it ${CONTAINER_NODE} sh
+
