@@ -2,7 +2,7 @@
 	migrate-fresh migrate-tests-fresh install-xdebug create-env
 
 CONTAINER_PHP=php
-CONTAINER_DB=mariadb
+CONTAINER_DB=database
 
 VOLUME_DATABASE=db-data
 VOLUME_DATABASE_TESTING=db-testing-data
