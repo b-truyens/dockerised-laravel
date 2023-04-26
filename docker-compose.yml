@@ -90,6 +90,7 @@ services:
 
 # Node Server
     node:
+        container_name: node
         build:
             context: .
             target: node

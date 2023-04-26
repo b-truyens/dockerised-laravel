@@ -1,6 +1,8 @@
 .PHONY: help ps fresh build start stop destroy tests tests-html migrate \
 	migrate-fresh migrate-tests-fresh install-xdebug create-env
 
+PROJECT_NAME=dockerised-laravel-v1
+
 CONTAINER_PHP=php
 CONTAINER_DB=database
 CONTAINER_NODE=node
@@ -69,3 +71,5 @@ ssh-db:
 ssh-node:
 	docker exec -it ${CONTAINER_NODE} sh
 
+node-install: 
+	docker exec -it ${CONTAINER_NODE} npm install 
