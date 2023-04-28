@@ -16,7 +16,7 @@ help: ## Print help.
 ps: ## Show containers.
 	@docker compose ps
 
-fresh: stop destroy build start ## Destroy & recreate all containers.
+fresh: stop destroy build ## Destroy & recreate all containers.
 
 build: ## Build all containers.
 	@docker compose build --no-cache
@@ -29,7 +29,7 @@ stop: ## Stop all containers.
 
 destroy: ## Destroy all containers.
 	@docker compose down
-	@if [ "$(shell docker volume ls --filter name=${VOLUME_DATABASE} --format {{.Name}})" ]; then \
+	@if [ "$(shell docker volume ls --filter name=${PROJECT_NAME}${VOLUME_DATABASE} --format {{.Name}})" ]; then \
 		docker volume rm ${VOLUME_DATABASE}; \
 	fi
 
